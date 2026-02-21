@@ -1,0 +1,28 @@
+# Foundry / Forge
+out/
+cache/
+lib/
+broadcast/
+artifacts/
+
+# Dependencies
+node_modules/
+
+# Environment
+.env
+
+# Testing
+gas-report.txt
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# If using multiple foundry folders, ensure sub-folder artifacts are ignored
+**/out/
+**/cache/
+**/lib/
+**/broadcast/
+**/artifacts/

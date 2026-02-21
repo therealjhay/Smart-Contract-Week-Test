@@ -1,66 +1,64 @@
-## Foundry
+# Foundry Smart Contract Deployments (Lisk Sepolia)
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+This repository contains five smart contract projects developed using Foundry and deployed on the Lisk Sepolia Testnet.
 
-Foundry consists of:
+## Projects and Deployment Addresses
 
-- **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
-- **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
-- **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
-- **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+| Project Name | Description | Contract Address |
+|--------------|-------------|------------------|
+| **ERC20 Token** | A standard implementation of the ERC20 token interface. | `0xb6530Fa0837d4bafC0CfAf1b833597A4Ea5b6525` |
+| **Todo List** | A decentralized task management contract for CRUD operations. | `0x48b1fa5c94C63B38EbD9b49d5c0AFC2D01216186` |
+| **SaveEther** | A simple savings contract for depositing and withdrawing ETH. | `0x3753d7cd7c072d38a0a506b6321d00e52fee44980dccc31fab6865f873612e7e` |
+| **SaveAsset** | A multi-chain asset management contract for cross-chain savings. | `0x0FA078b33c34a18e564FcB746aDf37d48e40fda8` |
+| **School Management** | A system to manage student records, payment, and teacher roles. | `0xAc916D00a5B5989Cea97f13f8f6E893F29fE3126` |
 
-## Documentation
+## Getting Started
 
-https://book.getfoundry.sh/
+### Prerequisites
 
-## Usage
-
-### Build
-
+Ensure you have Foundry installed:
 ```shell
-$ forge build
+curl -L https://foundry.paradigm.xyz | bash
+foundryup
 ```
 
-### Test
+### Installation
 
+1. Clone the repository:
+   ```shell
+   git clone <repository-url>
+   cd Smart-Contract-Week-Test
+   ```
+
+2. Install dependencies:
+   ```shell
+   forge install
+   ```
+
+### Compilation
+
+To compile all contracts:
 ```shell
-$ forge test
+forge build
 ```
 
-### Format
+### Testing
 
+To run the test suite:
 ```shell
-$ forge fmt
+forge test
 ```
 
-### Gas Snapshots
+### Deployment Command Template
+
+To deploy any of these contracts to Lisk Sepolia, use the following command structure:
 
 ```shell
-$ forge snapshot
+forge script script/<ScriptFile>.s.sol --rpc-url https://rpc.sepolia-api.lisk.com --private-key <YOUR_PRIVATE_KEY> --broadcast --verify
 ```
 
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+## Network Information: Lisk Sepolia
+- **RPC URL:** `https://rpc.sepolia-api.lisk.com`
+- **Chain ID:** `4202`
+- **Currency Symbol:** `ETH`
+- **Block Explorer:** `https://sepolia-blockscout.lisk.com`
